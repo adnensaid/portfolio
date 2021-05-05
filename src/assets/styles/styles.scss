@@ -1,0 +1,276 @@
+@import "variables";
+@import "reset";
+@import "classes";
+@import "utils";
+@import "base";
+@import "animations";
+@import "./media-queries";
+
+body{
+  background: var(--blue);
+}
+.main{
+  line-height: 2.5rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid:
+  "aside-left page aside-right" auto / 1fr 2fr 1fr; 
+  position: relative;
+  color: var(--white);   
+  @include sm{
+    grid:
+    "aside-right" 5rem
+    "page" auto
+    "aside-left" 5rem / auto;
+  }
+  @include xs{
+    grid:
+    "aside-right" 5rem
+    "page" auto
+    "aside-left" 5rem / auto;
+  }  
+  .aside-left{
+    grid-area: aside-left;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: var(--blue);
+    .socials{
+      flex: 0 0 5rem;
+      position: relative;
+      .socials-list{
+        background: var(--gray);
+        .social-elem{
+          display: block;
+          cursor: pointer;
+          position: relative;
+          img{
+            padding: 0.8rem;
+          }
+          &:hover{
+            transition: all 0.4s;
+            transform: translateX(2rem);
+          }  
+          &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            background-color: var(--gray);
+          }                 
+        }    
+      }
+      position: relative;
+      &::before{
+        content: "Follow me";
+        font-size: 1rem;
+        position: absolute;
+        top: -2.2rem;
+        left: 0.2rem;
+      }
+      @include sm{
+        display: none;
+      }    
+      @include xs{
+        display: none;
+      }
+    }
+    .background{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--text);
+      z-index: 1;
+      transform: translateY(-100vh);
+    }  
+    .icon{
+      @include sm{
+        display: none;
+      }
+      @include xs{
+        display: none;
+      }  
+    }
+
+  }
+  .page{
+    grid-area: page;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+    position: relative;
+    .dropdown-menu{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-100vh);
+      @include sm{
+        transform: translateY(calc(100vh - 10rem));
+      }   
+      @include xs{
+        transform: translateY(calc(100vh - 10rem));
+      }      
+      z-index: 1;
+      .dropdown-menu-list{
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+        background: var(--text);  
+        @include sm{
+          min-height: calc(100vh - 10rem);
+        }    
+        @include xs{
+          min-height: calc(100vh - 10rem);
+        } 
+        li{
+          padding: 6rem 25rem;
+          @include sm{
+            padding: 3rem 15rem;
+          }   
+          @include xs{
+            padding: 3rem 15rem;
+          } 
+          text-align: center;
+          margin: 0.5rem 0;
+          background: var(--gray);
+          position: relative;
+          &::after{
+            content: "";
+            width: 0%;
+            height: 75%;
+            background: var(--dark);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.2;
+          }   
+          &::before{
+            content: "";
+            width: 0%;
+            height: 25%;
+            background: var(--noir);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+          }  
+          a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            font-size: 4rem;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            @include sm{
+              font-size: 2rem;
+            }    
+            @include xs{
+              font-size: 2rem;
+            }   
+          }   
+          &:hover{
+            &::before{
+              transition: all ease 0.8s;
+              width: 100%;
+            }   
+            &::after{
+              transition: all ease 0.8s;
+              transition-delay: 0.1s;
+              padding-left: 100%;
+            }   
+          }  
+        }    
+      }  
+      p{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: var(--gray);
+        text-align: center;
+        font-size: 1.4rem;
+        letter-spacing: 0.1rem;
+      }
+    }         
+  }
+  .aside-right{
+    grid-area: aside-right;
+    background-color: var(--blue);
+    max-height: 100vh;
+    position: sticky;
+    top: 0; 
+    .menu{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .dropdown-toggle{
+        margin-right:5rem;
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+        @include sm{
+          margin-right: 1rem;
+          width: 4rem;
+          height: 4rem;
+        }  
+        @include xs{
+          margin-right: 1rem;
+          width: 4rem;
+          height: 4rem;
+        }  
+        i{
+          flex:0 0 0.2rem;
+          background: var(--white);
+          margin:0;
+          &:nth-child(2){
+            margin: 1rem 0;
+            opacity: 1;
+          }
+        } 
+        &:not(:focus):hover{
+          i{
+            transition: all 0.2s;
+            margin: 0.7rem 0;
+          }
+        }  
+      }    
+    }  
+    .background{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--text);
+      z-index: 1;
+      transform: translateY(-100vh);
+    }   
+    .icon{
+      position: absolute;
+      top: calc(50vh - 5rem);
+      right: 0;
+      @include sm{
+        display: none;
+      }
+      @include xs{
+        display: none;
+      }  
+    } 
+  }
+}

@@ -1,0 +1,112 @@
+.window-content{
+  position: relative;
+  .scene{
+    width: 40rem;
+    height: 20rem;
+    position: relative;
+    transition: all 10s;
+    //border: 0.1rem solid var(--text);
+    .cylinderBase{
+      transform-style: preserve-3d;
+      width: 100%;
+      height: 100%;
+      //transform: rotateZ(90deg) rotateX(60deg) translateY(-5rem);
+      //animation: rotate-cylindre 1s linear forwards;
+        transition: all linear 15s;
+        transform:rotateX(360deg);
+  
+      .circle{
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        //border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.left{
+          transform-style: preserve-3d;
+          border: 0.1rem solid var(--green);
+          transform: translateX(-10rem) rotateY(90deg);
+          border-radius: 100%;
+        }
+        &.right{
+          border: 0.1rem solid var(--red);
+          transform: translateX(30rem) rotateY(90deg);
+          border-radius: 100%;
+        }
+      }
+      .side{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .face{
+          width: 100%;
+          height: 6rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;  
+          background: var(--gray);
+
+          &.face00{
+            position: absolute;
+            transform: translateZ(10rem);
+          } 
+          &.face01{
+            position: absolute;
+            transform: rotateX(-30deg) translateZ(10rem);
+          }   
+          &.face02{
+            position: absolute;
+            transform: rotateX(-60deg) translateZ(10rem);
+          }      
+
+          &.face03{
+            position: absolute;
+            transform: rotateX(-90deg) translateZ(10rem);
+          }
+
+          &.face04{
+            position: absolute;
+            transform: rotateX(-120deg) translateZ(10rem);
+          }  
+
+          &.face05{
+            position: absolute;
+            transform: rotateX(-150deg) translateZ(10rem);
+          }      
+
+          &.face06{
+            position: absolute;
+            transform: rotateX(-180deg) translateZ(10rem);
+          }  
+          &.face07{
+            position: absolute;
+           transform: rotateX(-210deg) translateZ(10rem);
+          } 
+          &.face08{
+            position: absolute;
+           transform: rotateX(-240deg) translateZ(10rem);
+          }         
+          &.face09{
+            position: absolute;
+           transform: rotateX(-270deg) translateZ(10rem);
+          } 
+          &.face10{
+            position: absolute;
+           transform: rotateX(-300deg) translateZ(10rem);
+          } 
+          &.face11{
+            position: absolute;
+           transform: rotateX(-330deg) translateZ(10rem);
+          } 
+        }
+      }
+  
+    }
+  }
+}

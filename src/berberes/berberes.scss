@@ -1,0 +1,716 @@
+@import "../assets/styles/media-queries.scss";
+
+body{
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  background: var(--gray);
+}
+
+.container{
+  display: block;
+  max-width: 120rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.banner-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background:center center / cover url(../assets/images/berberes/bkg-1.png) no-repeat;  
+  .header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    padding: 0.5rem 1rem; 
+    line-height: 1.2rem;
+    @include xs{
+      flex-direction: column;
+      align-items: center;
+    }
+    @include sm{
+      flex-direction: column;
+      align-items: center;
+    } 
+    .skincare{
+      flex:1 ;
+      display: flex;
+      flex-flow: row nowrap;
+      min-height: 2rem;
+      overflow: hidden;
+      @include xs{
+        display: none;
+      }
+      @include sm{
+        display: none;
+      }   
+      .skincare-text{
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        p{
+          margin: 0;
+        }
+      }
+      .skincare-img{
+        flex-basis:2rem;
+        background: url(../assets/images/berberes/skincare.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .logo{
+      max-width: 8rem;
+    }
+    .social{
+      flex: 1;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      min-height: 2rem;
+      overflow: hidden;
+      @include xs{
+        display: none;
+      }
+      @include sm{
+        display: none;
+      }  
+      .social-img{
+        flex-basis: 2rem;   
+        margin: 0 1rem;
+        &:nth-child(1){
+          background: center center / contain url(../assets/images/berberes/facebook.png) no-repeat;
+        }
+        &:nth-child(2){
+          background: center center / contain url(../assets/images/berberes/instagram.png) no-repeat;
+        }
+      } 
+      .social-text{
+        margin: 0;
+        display: flex;
+        align-items: flex-end;    
+      }
+    }
+  }
+  .banner{
+    flex: auto;
+    .banner-content{
+      display: flex;
+      flex-flow: row nowrap;  
+      .banner-images{
+        flex: 1;
+        position: relative;
+        @include xs{
+          display: none;
+        }
+        @include sm{
+          display: none;
+        }  
+        .img-1{
+          position: absolute;
+          left: 6rem;
+          top: 0;
+          width: 75%;
+          height: 75%;
+          z-index: 0;
+          background: url(../assets/images/berberes/rosace.svg) no-repeat;
+          background-size: contain;
+        }
+        .img-2{
+          position: absolute;
+          left: 6rem;
+          top: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background:url(../assets/images/berberes/img-2.png) no-repeat;
+          background-size: contain;
+        }  
+      }
+      .banner-text{
+        flex: 1;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        
+        .titre-article{
+          color: var(--text);
+          letter-spacing: 0.6rem;
+          font-size: 2rem;
+          margin: 0;
+        }
+        h1{
+          font-weight: 300;
+          color:var(--text);
+          font-size:6.4rem;
+          padding: 4rem 0;
+        }
+        .button-article{
+          transition: all 0.4s;
+          &:hover{
+            transform: scale(1.05);
+          }
+        }  
+        @include xs{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0;
+          .titre-article{
+            padding-top: 2rem;
+            font-size: 1.6rem;
+          }
+          h1{
+            font-size: 4.8rem;
+            padding: 1rem 0;
+          }
+          p{
+            margin: 0;
+            padding: 0 1rem;
+            text-align: center;
+          }
+        }  
+        @include sm{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0;
+          .titre-article{
+            padding-top: 2rem;
+            font-size: 1.6rem;
+          }
+          h1{
+            font-size: 4.8rem;
+            padding: 1rem 0;
+          }
+          p{
+            margin: 0;
+            padding: 0 1rem;
+            text-align: center;
+          }
+        }   
+        @include md{
+          h1{
+            font-size: 4rem;
+            margin: 0;
+          }
+        } 
+      }    
+    }  
+  }
+}
+.produits{
+  background: var(--gray);
+  padding-top: 14rem;
+  @include xs{
+    padding: 0 4rem;
+  }
+  @include sm{
+    padding: 0 4rem;
+  }  
+  .produit-list{
+    display: flex;
+    flex-direction: column;
+    .produit-elem{
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 14rem;
+      @include xs{
+        margin: 4rem 0;
+      }
+      @include sm{
+        margin: 4rem 0;
+      }         
+      .creme{
+        flex: 1;
+        position: relative;
+        @include xs{
+          display: none;
+        }
+        @include sm{
+          display: none;
+        }    
+        .img-creme{
+          z-index: 1;
+          position: relative;
+        }
+        .num-creme{
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          position: absolute;
+          top: 0;
+          right: 0;
+          p{
+            font-size: 60rem;
+            color: var(--white);
+            margin: 0;
+            padding: 0;
+            
+          }
+        }
+      }  
+      .creme-text{
+          flex: 1;
+          max-height: 60rem;
+          overflow: hidden;  
+          p{
+            padding-top: 1rem;
+            max-width: 450px;
+            font-size: 1.8rem;
+            font-weight: 300;
+          }
+          p:last-child{
+            display: none;
+          }
+          .btn-det{
+            &:nth-child(2):focus ~ p{
+              display: none;
+              &:last-child{
+                display: block;
+              }
+            }
+          }
+          @include xs{
+            margin-bottom: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2{
+              font-size: 2rem;
+              text-align: center;
+            }
+            .vp-text{
+              text-align: center;
+            }
+          }
+          @include sm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2{
+              font-size: 2rem;
+              text-align: center;
+            }
+            .vp-text{
+              text-align: center;
+            }
+          }  
+        } 
+      }
+    }
+  }
+  .offre-section{
+    padding-top: 4rem;
+    background: var(--white);
+    .offre-content{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .offre-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        .offre-header-img{
+          position: absolute;
+          top: -10rem;
+          @include xs{
+            max-width: 10rem;
+            top: -8rem;
+          }
+          @include sm{
+            max-width: 10rem;
+            top: -8rem;
+          }  
+        }
+        .offre-header-titre{
+          padding-top: 5rem;
+          text-align: center;
+          @include xs{
+            padding:1rem 0;
+          }
+          @include sm{
+            padding:1rem 0;
+          }  
+        }
+      }
+      .commander{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        @include xs{
+          flex-direction: column; 
+          align-items: center;
+          text-align: center;
+          hr{ 
+            display: none;
+          }
+        }
+        @include sm{
+          flex-direction: column; 
+          padding: 0 2rem;
+          hr{ 
+            display: none;
+          }
+        }  
+        .commander-img{
+          flex: 1;
+          @include xs{
+            padding:4rem;
+  
+          }
+          @include sm{
+            padding:4rem;
+  
+          }  
+        }
+        .commander-content{
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+           hr{
+            margin: 2rem 0;
+            max-width: 8rem;
+            border: 0;
+            border: 1px solid var(--text);
+          }
+          ul li{
+            display: flex;
+            margin-bottom: 4rem;
+            .circle-s{
+              margin: 0 2rem 0 0;
+              width: 50px;
+              height: 50px;
+              border-radius: 50px;
+              border: 1px solid var(--text);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 700;
+              font-size: 2rem;
+            }
+            div{
+              h4{
+                margin: 0;
+              }
+              p{
+                margin: 0;
+              }
+            }
+          }
+          .btn{
+            color: white;
+            background: var(--orange);
+          }
+        }
+    
+      }    
+    }  
+  }  
+  .secrets{
+    padding: 4rem 0;
+    background: center center / cover url(../assets/images/berberes/secrets-bkg.jpg) no-repeat;
+    color: var(--white);
+    p{
+      max-width: 50rem;
+      font-weight: 300;
+    }
+    @include xs{
+      padding: 4rem 1rem;
+    }
+    @include sm{
+      padding: 4rem 1rem;
+    }  
+  }
+  .services{
+    padding: 4rem 0;
+    background: var(--background);
+    line-height: 2rem;
+    h4{
+      text-align: center;
+    }
+    .service-list{ 
+      display: flex;
+      flex-flow: row nowrap;
+      @include xs{
+        flex-direction: column;
+      }
+      @include sm{
+        flex-direction: column;
+      }  
+      .service-elem{
+        flex: 1;
+        background:var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 1rem;
+        padding: 4rem;
+        .service-elem-img{
+          flex:3;
+        }
+        p{
+          flex:1;
+          margin: 0;
+          span{
+            color: var(--orange);
+          }
+        }
+      }  
+    }  
+  }
+  .newsletter{
+    background: var(--white);
+    padding: 4rem 1rem;
+    .newsletter-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      form{
+        input{
+          border: 0;
+          padding: 2rem;
+          min-width: 40rem;
+          background: var(--text);
+          color: var(--white);
+          border-radius: 0.5rem;
+          margin: 0;
+          @include xs{
+            min-width: 20rem;
+            padding: 1.5rem;
+          }
+          @include sm{
+            min-width: 20rem;
+            padding: 1.5rem;
+          }        
+          &::placeholder{
+            color: var(--white);
+          }
+          outline: 0;
+        }
+        button{
+          padding:0;
+          margin: 0;
+          padding: 1.8rem;
+          color: var(--white);
+          background: var(--text);
+          @include xs{
+            padding: 1.3rem;
+          }
+          @include sm{
+            padding: 1.3rem;
+          }  
+        }
+      }
+      p{
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        font-weight: 300;
+        @include xs{
+          text-align: center;
+        }
+        @include sm{
+          text-align: center;
+        }  
+      }
+      .social{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        @include xs{
+          flex-direction: column;
+        }
+        @include sm{
+          flex-direction: column;
+        }  
+        p{
+          font-size:1.6rem;
+          font-weight:400;
+          margin: 0;
+        }
+        .social-elem{
+          width: 4rem;
+          height: 4rem;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 0.1rem solid var(--text);
+          border-radius: 100%;
+          padding: 0.5rem;
+          img{
+            max-width: 100%;
+            max-height: 100%;
+          }
+          @include xs{
+            margin: 0.5rem 0;
+          }
+          @include sm{
+            margin: 0.5rem 0;
+          }  
+        }
+      }    
+    }
+  }
+  footer{
+    padding: 4rem 0;
+    background: center center / cover url(../assets/images/berberes/footer-bkg.jpg) no-repeat ;
+    color: var(--white);
+    .footer-content{
+      display: flex;
+      flex-flow: row nowrap;
+      @include xs{
+        flex-direction: column;
+      }
+      @include sm{
+        flex-direction: column;
+      }
+      @include md{
+        font-size: 1rem;
+      }
+      @include xl{
+        font-size: 1.6rem;
+      }  
+      .logo-footer{
+        margin: 0 1rem;
+        flex-basis: 8rem;
+        display: flex;
+        align-items: center;
+        background: center center / contain url(../assets/images/berberes/logo-white.png) no-repeat;
+      }
+      .inside-footer{
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .inside-footer-titre{
+          text-align: center; 
+        }
+        .inside-footer-text{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas:
+        "ul-1 ul-2 ul-3 ul-4";
+        gap: 4rem;
+  
+        @include xs{
+          display: block;
+        }
+        @include sm{
+          display: block;
+        }  
+        ul:nth-child(1){
+          grid-area: ul-1;
+        }
+        ul:nth-child(2){
+          grid-area: ul-2;
+        }
+        ul:nth-child(3){
+          grid-area: ul-3;
+        }
+        ul:nth-child(4){
+          grid-area: ul-4;
+        }
+      }
+    }
+  }
+  }
+  .under-footer{
+    background: var(--noir);
+    color: var(--white);
+    .content-under-footer{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      transition: all ease 0.4s;
+      @include xs{
+        flex-direction: column;
+      }
+      @include sm{
+        flex-direction: column;
+      }  
+      .contact{
+        position: relative;
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include xs{
+          order: 1;
+          text-align: center;
+        }
+        @include sm{
+          order: 1;
+          text-align: center;
+        }  
+        .cookies{
+          width: 16rem;
+          height: 0.5rem;
+          background: var(--white);
+          border-top-left-radius: 0.5rem;
+          border-top-right-radius: 0.5rem;
+          position: absolute;
+          bottom: -0.5rem;
+          transition: all 0.4s;
+          @include xs{
+            display: none;
+          }
+          @include sm{
+            display: none;
+          }  
+          a{
+            padding: 0;
+            font-size: 1.5rem;
+            display: none;
+            color: orange;
+            text-decoration: underline;
+          } 
+          &:hover{
+            height: 40px;
+            a{
+              display: block;
+              text-align: center;
+              padding: 10px 0;
+            }
+          }
+        } 
+      }
+      .list{
+        display: flex;
+        flex-flow: row nowrap;
+        @include xs{
+          flex-direction: column;
+          align-items: center;
+          order: 0;
+        }
+        @include sm{
+          flex-direction: column;
+          align-items: center;
+          order: 0;
+        }  
+        li{
+          padding: 2rem;
+          font-size: 1.4rem;
+          @include xs{
+            padding: 0.5rem;
+          }
+          @include sm{
+            padding: 0.5rem;
+          }  
+          a{
+            color: var(--white);
+          }
+        }
+      }  
+    }
+  }

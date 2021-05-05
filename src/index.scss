@@ -1,0 +1,55 @@
+@import "./assets/styles/media-queries";
+
+.page-about{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  h1{
+    font-size: 4rem;
+    text-align: center;
+    margin: 1rem 0;
+    strong{
+      color: var(--noir);
+    }
+  }
+  p{
+    font-size: 1.8rem;
+    text-align: center;
+    max-width: 60rem;
+  }  
+  @include l{
+    h1{
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.6rem;
+    }
+  }  
+  @include md{
+    h1{
+      font-size: 2.8rem;
+    }
+    p{
+      font-size: 1.6rem;
+    }
+  }  
+  @include sm{
+    h1{
+      font-size: 2.4rem;
+    }
+    p{
+      font-size: 1.2rem;
+    }
+  }     
+  @include xs{
+    h1{
+      font-size: 2rem;
+    }
+    p{
+      font-size: 1.2rem;
+    }
+  }      
+}
