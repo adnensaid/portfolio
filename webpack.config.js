@@ -21,7 +21,9 @@ module.exports = {
     montre: path.join(__dirname, './src/montre/montre.js'),
     sphere: path.join(__dirname, './src/sphere/sphere.js'),
     calculatrice: path.join(__dirname, './src/calculatrice/calculatrice.js'),
-    todolist:path.join(__dirname, './src/todolist/todolist.js')
+    todolist:path.join(__dirname, './src/todolist/todolist.js'),
+    socials:path.join(__dirname, './src/socials/socials.js'),
+    cygalleries:path.join(__dirname, './src/cygalleries/cygalleries.js')
 
   },
   output: {
@@ -156,7 +158,17 @@ module.exports = {
       filename: "skill.html",
       template: path.join(__dirname, './src/skill/skill.html'),
       chunks:["skill"]
-    }),              
+    }),         
+    new HtmlWebpackPligin({
+      filename: "socials.html",
+      template: path.join(__dirname, './src/socials/socials.html'),
+      chunks:["socials"]
+    }),
+    new HtmlWebpackPligin({
+      filename: "cygalleries.html",
+      template: path.join(__dirname, './src/cygalleries/cygalleries.html'),
+      chunks:["cygalleries"]
+    })        
   ],
   stats:"minimal",
   devtool: "source-map",
